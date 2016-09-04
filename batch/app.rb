@@ -3,6 +3,7 @@ require 'open-uri'
 require './lib/logger.rb'
 require './lib/fileIO.rb'
 require './lib/analyze.rb'
+require './lib/analyzeWithOpe_ekitan.rb'
 
 ### main ###
 def appMain()
@@ -32,11 +33,18 @@ def appMain()
 
 		# パース
 		outputData << "#{format_textAsJSON(name, url, parse(open(url, "r:UTF-8", &:read), keyword), urlPrefix)}"
-
-		# 出力
-		writeToFile(outFname, outputData)
 	end
 
+	# その他のサイト
+    # 動作にはcapybara (2.8.1)のインストールが必要
+    # TODO: selenium->poltergeist (1.10.0)
+	crawler = Crawler::Ekitan.new
+	crawler.login
+	infoMap = crawler.report
+	outputData << transformMapToJSON("ekitan", infoMap)
+
+	# 出力
+	writeToFile(outFname, outputData)
 end
 ###########
 

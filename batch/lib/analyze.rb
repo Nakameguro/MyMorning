@@ -9,6 +9,25 @@ def parse(page_source, key)
 	url_titles.map! {|(aurl, atitle)|[CGI.unescapeHTML(aurl), CGI.unescapeHTML(atitle)]}
 end
 
+
+#
+# フォーマッティング(Map -> JSON)
+#
+def transformMapToJSON(objName, map)
+    cont = "var #{objName} : {\n"
+
+    for key in map.keys
+        cont << "\t#{key} : {\n"
+        for k in map[key].keys
+            cont << "\t\t#{k} : \"#{map[key][k]}\",\n"
+        end
+        cont << "\t},\n"
+    end
+
+    cont << "}\n\n"
+    cont
+end
+
 #
 # フォーマッティング(JSONフォーマット)
 #
