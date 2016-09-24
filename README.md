@@ -20,5 +20,7 @@ Error messages—in red—might appear during the install, and you might see npm
 Open a terminal window and enter this command:
 
 ```bash
-npm start
+ng serve
 ```
+
+Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
