@@ -13,7 +13,7 @@ import { NavController } from 'ionic-angular';
 })
 export class Digest {
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController) { }
 
   ionViewDidLoad() {
     console.log('Hello Digest Page');
