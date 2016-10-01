@@ -9,5 +9,24 @@
 
 
 <ion-content padding>
-
+  <ion-list>
+    <ion-list-header>
+      The below are recent news for you.
+      <ion-icon name="heart" item-right (click)="callApi();"></ion-icon>
+    </ion-list-header>
+    <div *ngFor="let content of dataArr; let idx = index;">
+      <ion-item>
+        <ion-thumbnail item-left>
+          <img src="{{content.picture.medium}}"  class="item-img" >
+        </ion-thumbnail>
+        <h3>{{content.name.title}} {{content.name.first}} {{content.name.last}}</h3>
+        {{content.location.street}}, {{content.location.city}}<br>
+        {{content.phone}}
+        <p item-right >{{content.dob}}</p>
+      </ion-item>
+    </div>
+    <div  *ngIf="dataArr.length <= 0" class="nodata" >
+      <p text-center width="100%">You don't have any unread news !!</p>
+    </div>
+  </ion-list>
 </ion-content>
