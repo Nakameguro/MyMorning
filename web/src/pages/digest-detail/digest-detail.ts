@@ -1,19 +1,21 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
-/*
-  Generated class for the DigestDetail page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-digest-detail',
   templateUrl: 'digest-detail.html'
 })
 export class DigestDetail {
 
-  constructor(public navCtrl: NavController) {}
+  public content: any;
+
+  constructor(
+      public navCtrl: NavController,
+      public navParams: NavParams
+    ) {
+    // 前画面からのパラメーターゲット
+    this.content = navParams.get('content');
+    }
 
   ionViewDidLoad() {
     console.log('Hello DigestDetail Page');

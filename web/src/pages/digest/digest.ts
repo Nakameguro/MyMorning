@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+/**遷移先画面**/
+import { DigestDetail } from '../digest-detail/digest-detail';
+
 /**HTTP通信ライブラリ**/
 import {Http} from '@angular/http';
 
@@ -15,7 +18,8 @@ export class Digest {
 
   constructor(
       public navCtrl: NavController,
-      private http: Http
+      private http: Http,
+      private nav: NavController
     ) { }
 
     /**
@@ -29,6 +33,14 @@ export class Digest {
   ionViewDidLoad() {
     console.log('Hello Digest Page');
   }
+
+    /**
+     * Move to detail view
+     **/
+    public moveDetail(e: Event,  idx: number ) {
+        // PUSHによる画面遷移
+        this.nav.push(DigestDetail, { 'content': this.dataArr[idx] });
+    }
 
     /**
      * API Call (News/list API)

@@ -15,7 +15,7 @@
       <ion-icon name="heart" item-right (click)="callApi();"></ion-icon>
     </ion-list-header>
     <div *ngFor="let content of dataArr; let idx = index;">
-      <ion-item>
+      <ion-item (click)="moveDetail($event, idx);">
         <ion-thumbnail item-left>
           <img src="{{content.picture.medium}}"  class="item-img" >
         </ion-thumbnail>

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+/**遷移先画面**/
+import { RealTimeDetail } from '../real-time-detail/real-time-detail';
+
 /**HTTP通信ライブラリ**/
 import {Http} from '@angular/http';
 
@@ -14,7 +17,8 @@ export class RealTime {
 
   constructor(
     public navCtrl: NavController,
-    private http: Http
+    private http: Http,
+    private nav: NavController
     ) {}
 
    /**
@@ -27,6 +31,15 @@ export class RealTime {
   ionViewDidLoad() {
     console.log('Hello RealTime Page');
   }
+
+    /**
+     * Move to detail view
+     **/
+    public moveDetail(e: Event,  idx: number ) {
+        // PUSHによる画面遷移
+        this.nav.push(RealTimeDetail, { 'content': this.dataArr[idx] });
+    }
+
     /**
      * API Call (News/list API)
      **/
