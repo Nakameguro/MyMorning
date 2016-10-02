@@ -7,6 +7,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { Digest } from '../pages/digest/digest';
 import { RealTime } from '../pages/real-time/real-time';
 import { ReadLater } from '../pages/read-later/read-later';
+import { Login } from '../pages/login/login';
+import { Signup } from '../pages/signup/signup';
 
 export interface PageObj {
   title: string;
@@ -32,6 +34,10 @@ export class MyApp {
     { title: 'Digest', component: Digest, icon: 'apps' },
     { title: 'RealTime', component: RealTime, index: 1, icon: 'clock' },
     { title: 'ReadLater', component: ReadLater, index: 2, icon: 'bookmark' }
+  ];
+  loggedOutPages: PageObj[] = [
+    { title: 'Login', component: Login, icon: 'log-in' },
+    { title: 'Signup', component: Signup, icon: 'person-add' }
   ];
 
   constructor(

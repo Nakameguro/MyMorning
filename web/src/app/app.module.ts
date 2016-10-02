@@ -9,6 +9,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { DigestDetail } from '../pages/digest-detail/digest-detail';
 import { RealTimeDetail } from '../pages/real-time-detail/real-time-detail';
 import { ReadLaterDetail } from '../pages/read-later-detail/read-later-detail'; 
+import { Login } from '../pages/login/login';
+import { Signup } from '../pages/signup/signup';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ReadLaterDetail } from '../pages/read-later-detail/read-later-detail';
     TabsPage,
     DigestDetail,
     RealTimeDetail,
-    ReadLaterDetail
+    ReadLaterDetail,
+    Login,
+    Signup
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -33,7 +37,9 @@ import { ReadLaterDetail } from '../pages/read-later-detail/read-later-detail';
     TabsPage,
     DigestDetail,
     RealTimeDetail,
-    ReadLaterDetail
+    ReadLaterDetail,
+    Login,
+    Signup
   ],
   providers: []
 })
