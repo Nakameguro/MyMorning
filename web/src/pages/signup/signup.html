@@ -8,6 +8,30 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="login-page">
+
+  <ion-list>
+    <div class="logo">
+      <img src="assets/img/appicon.svg">
+    </div>
+
+    <form #signupForm="ngForm" novalidate>
+      <ion-item>
+        <ion-label floating color="primary">Username</ion-label>
+        <ion-input name="username" type="text">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating color="primary">Password</ion-label>
+        <ion-input name="password" type="password">
+        </ion-input>
+      </ion-item>
+
+      <div padding>
+        <button ion-button type="submit" block color="primary">Create</button>
+      </div>
+    </form>
+  </ion-list>
 
 </ion-content>
