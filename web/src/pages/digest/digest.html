@@ -24,6 +24,12 @@
         {{content.phone}}
         <p item-right >{{content.dob}}</p>
       </ion-item>
+      <ion-item>
+        <button ion-button icon-left clear item-right>
+          <ion-icon name="bookmark"></ion-icon>
+          Read Later
+        </button>
+      </ion-item>
     </div>
     <div  *ngIf="dataArr.length <= 0" class="nodata" >
       <p text-center width="100%">You don't have any unread news !!</p>
