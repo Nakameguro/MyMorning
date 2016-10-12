@@ -25,7 +25,7 @@
         <p item-right >{{content.dob}}</p>
       </ion-item>
       <ion-item>
-        <button ion-button icon-left clear item-right>
+        <button ion-button icon-left (click)="addBookmark()" clear item-right>
           <ion-icon name="bookmark"></ion-icon>
           Read Later
         </button>

@@ -42,6 +42,10 @@ export class Digest {
         this.nav.push(DigestDetail, { 'content': this.dataArr[idx] });
     }
 
+    addBookmark() {
+        console.log('addBookmark!!!!');
+    }
+
     /**
      * API Call (News/list API)
      **/
