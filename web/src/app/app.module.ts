@@ -12,6 +12,14 @@ import { ReadLaterDetail } from '../pages/read-later-detail/read-later-detail';
 import { Login } from '../pages/login/login';
 import { Signup } from '../pages/signup/signup';
 
+import { DashboardComponent } from '../components/dashboard.component';
+import { FeedComponent } from '../components/feed.component';
+import { FeedService } from '../services/feed.service';
+
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -23,10 +31,15 @@ import { Signup } from '../pages/signup/signup';
     RealTimeDetail,
     ReadLaterDetail,
     Login,
-    Signup
+    Signup,
+    DashboardComponent,
+    FeedComponent
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    BrowserModule,
+    FormsModule,
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -41,6 +54,8 @@ import { Signup } from '../pages/signup/signup';
     Login,
     Signup
   ],
-  providers: []
+  providers: [
+    FeedService
+  ]
 })
 export class AppModule {}
