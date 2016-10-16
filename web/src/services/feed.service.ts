@@ -3,10 +3,10 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class FeedService {
     private feeds = [
-        'http://angular-craft.com/feed/',
-        'https://www.smashingmagazine.com/feed/',
-        'http://feeds.feedburner.com/thoughtram',
-        'http://jp.techcrunch.com/feed/'
+        'http://jp.techcrunch.com/feed/',
+        'http://b.hatena.ne.jp/hotentry/it.rss',
+        'https://jser.info/rss/',
+        'https://html5experts.jp/feed'
     ];
 
     getUserFeeds() {
